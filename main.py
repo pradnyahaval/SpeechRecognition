@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request, redirect
 import speech_recognition as sr
+from flask import flash
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'Pradnya_Haval' #can give any sting as SECRET_KEY. It is for flash messages
+
 @app.route("/", methods=['GET','POST'])
 def base():
     transcripted_text = ""
@@ -18,6 +21,7 @@ def base():
         file = request.files["file"]
         #for if the file has no name
         if file.filename == "":
+            flash("Please select a .wav file", category="error")
             return redirect(request.url)
 
          #for speech recognition if file exists
@@ -29,6 +33,7 @@ def base():
                 audio_data = recognizer.record(source)
 
             transcripted_text = recognizer.recognize_google(audio_data, key=None)
+            flash("Your transcription is ready", category="success")
         
     return render_template("base.html", transcripted_text=transcripted_text)
 
