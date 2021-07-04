@@ -16,6 +16,30 @@
         <img style="display: inline;" src="../static/img/logo.png" alt="logo" width="60px" height="60px">
         <h1 style="display: inline;">SpeechRecognition</h1>
     </header>
+    
+    <!-- for flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+           {% for category, message in messages %}
+            {% if category == 'error' %}
+                    <div class="alert alert-danger alter-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span><!--&times; => fancy char to show x -->
+                        </button>
+                    </div>
+                {% else %}
+                    <div class="alert alert-success alter-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span><!--&times; => fancy char to show x -->
+                        </button>
+                    </div>
+                {% endif %}
+           {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
     <div class="container">
         <form method="POST" enctype="multipart/form-data" align="center"> <!--to uploadd a file-->
             <h2>Upload new file</h2>
