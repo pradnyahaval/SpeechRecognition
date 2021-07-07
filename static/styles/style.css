@@ -1,17 +1,28 @@
-body{
+body, html{
+    height: 100%;
     font-family: 'Roboto Slab', serif;
+    background-image: linear-gradient(to bottom, rgb(245, 245, 245), rgb(248, 248, 248));
+    background-repeat: no-repeat;
 }
 
 header{
-    font-size: 20px;
+    font-size: 54px;
+    font-family: 'Alfa Slab One', cursive;
     color: red;
     padding: 10px;
+    background-image: linear-gradient(to right, rgb(99, 195, 233), white);
+    border-bottom: 5px solid skyblue;
+    margin-bottom: 10px;
 }
 
 .container{
+    padding: 30px;
     border: 1px dashed black;
     border-radius: 10px;
-    padding: 20px;
+}
+
+.container h2{
+    text-align: center;
 }
 
 .container form{
@@ -19,12 +30,10 @@ header{
     border-radius: 100px;
     padding: 10px;
     margin-bottom: 20px;
-    background-image: linear-gradient(to bottom right, rgb(151, 255, 246), rgb(162, 64, 241));
 }
 
-.container .container2{
-    border: 1 px solid black;
-    padding: 10px;
-    margin-bottom: 20px;
-    color: red;
+.container input{
+    font-size: 18px;
+    font-weight: 300px;
 }
+
