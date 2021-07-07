@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect
 import speech_recognition as sr
 from flask import flash
 
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Pradnya_Haval' #can give any sting as SECRET_KEY. It is for flash messages
 
