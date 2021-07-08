@@ -1,5 +1,6 @@
 # SpeechRecognition_UsingFlask
-Python Project using flask,PyAudio, html, css, Bootstrap
+Python Project using flask,PyAudio, html, css, Bootstrap <br/>
+Viewer can upload a .wav file or speak to get transcripted text. *It is only for English language. 
 
 ![alt text](Screenshots/img1.png)
 ![alt text](Screenshots/img2.png)
